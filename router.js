@@ -16,13 +16,13 @@ router
   .get("/detail", pagesController.getDetailpage)
 
   //  后台管理页面  统一添加admin做为前缀
-  .get("/admin/admin", pagesController.getAdminpage)
+  .get("/admin", pagesController.getAdminpage)
   .get("/admin/categories", pagesController.getCategoriespage)
   .get("/admin/comments", pagesController.getCommentspage)
   .get("/admin/login", pagesController.getLoginpage)
-  .get("/admin/nav-menus", pagesController.getNav - menuspage)
-  .get("/admin/password-reset", pagesController.getPassword - resetpage)
-  .get("/admin/post-add", pagesController.getPost - addpage)
+  .get("/admin/nav-menus", pagesController.getNavMenuspage)
+  .get("/admin/password-reset", pagesController.getPasswordResetpage)
+  .get("/admin/post-add", pagesController.getPostAddpage)
   .get("/admin/posts", pagesController.getPostspage)
   .get("/admin/profile", pagesController.getProfilepage)
   .get("/admin/settings", pagesController.getSettingspage)

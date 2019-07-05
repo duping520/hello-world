@@ -7,7 +7,7 @@ const fs = require("fs");
 // 读取前台页面
 module.exports.getIndexpage = (req, res) => {
   // 现在这么做得原因是我们还没有引入模板引擎
-  fs.readFile(__dirname + "/../vendors/index.html", (err, data) => {
+  fs.readFile(__dirname + "/../vendors/index.ejs", (err, data) => {
     if (err) {
       res.end(404);
     } else {
@@ -16,7 +16,7 @@ module.exports.getIndexpage = (req, res) => {
   });
 };
 module.exports.getListpage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/list.html", (err, data) => {
+  fs.readFile(__dirname + "/../vendors/list.ejs", (err, data) => {
     if (err) {
       res.end(404);
     } else {
@@ -25,7 +25,7 @@ module.exports.getListpage = (req, res) => {
   });
 };
 module.exports.getDetailpage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/detail.html", (err, data) => {
+  fs.readFile(__dirname + "/../vendors/detail.ejs", (err, data) => {
     if (err) {
       res.end(404);
     } else {
@@ -36,7 +36,7 @@ module.exports.getDetailpage = (req, res) => {
 
 // 读取后台页面
 module.exports.getAdminpage = (req, res) => {
-  fs.readFile(__dirname + "/./vendors/admin/index.html", (err, data) => {
+  fs.readFile(__dirname + "/./vendors/admin/index.ejs", (err, data) => {
     if (err) {
       return res.end("404");
     } else {
@@ -46,7 +46,7 @@ module.exports.getAdminpage = (req, res) => {
   });
 };
 module.exports.getCategoriespage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/admin/categories.html", (err, data) => {
+  fs.readFile(__dirname + "/../vendors/admin/categories.ejs", (err, data) => {
     if (err) {
       res.end(404);
     } else {
@@ -55,7 +55,7 @@ module.exports.getCategoriespage = (req, res) => {
   });
 };
 module.exports.getCommentspage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/admin/comments.html", (err, data) => {
+  fs.readFile(__dirname + "/../vendors/admin/comments.ejs", (err, data) => {
     if (err) {
       res.end(404);
     } else {
@@ -63,17 +63,9 @@ module.exports.getCommentspage = (req, res) => {
     }
   });
 };
-module.exports.getIndexpage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/admin/index.html", (err, data) => {
-    if (err) {
-      res.end(404);
-    } else {
-      res.end(data);
-    }
-  });
-};
+
 module.exports.getLoginpage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/admin/login.html", (err, data) => {
+  fs.readFile(__dirname + "/../vendors/admin/login.ejs", (err, data) => {
     if (err) {
       res.end(404);
     } else {
@@ -81,8 +73,8 @@ module.exports.getLoginpage = (req, res) => {
     }
   });
 };
-module.exports.getNavenuspage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/admin/anv-menus.html", (err, data) => {
+module.exports.getNavMenuspage = (req, res) => {
+  fs.readFile(__dirname + "/../vendors/admin/anv-menus.ejs", (err, data) => {
     if (err) {
       res.end(404);
     } else {
@@ -90,17 +82,8 @@ module.exports.getNavenuspage = (req, res) => {
     }
   });
 };
-module.exports.getPasswordpage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/admin/password.html", (err, data) => {
-    if (err) {
-      res.end(404);
-    } else {
-      res.end(data);
-    }
-  });
-};
-module.exports.getPostspage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/admin/posts.html", (err, data) => {
+module.exports.getPasswordResetpage = (req, res) => {
+  fs.readFile(__dirname + "/../vendors/admin/password.ejs", (err, data) => {
     if (err) {
       res.end(404);
     } else {
@@ -109,7 +92,16 @@ module.exports.getPostspage = (req, res) => {
   });
 };
 module.exports.getPostAddpage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/admin/post-add.html", (err, data) => {
+  fs.readFile(__dirname + "/../vendors/admin/posts.ejs", (err, data) => {
+    if (err) {
+      res.end(404);
+    } else {
+      res.end(data);
+    }
+  });
+};
+module.exports.getPostspage = (req, res) => {
+  fs.readFile(__dirname + "/../vendors/admin/post-add.ejs", (err, data) => {
     if (err) {
       res.end(404);
     } else {
@@ -118,7 +110,7 @@ module.exports.getPostAddpage = (req, res) => {
   });
 };
 module.exports.getProfilepage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/admin/profile.html", (err, data) => {
+  fs.readFile(__dirname + "/../vendors/admin/profile.ejs", (err, data) => {
     if (err) {
       res.end(404);
     } else {
@@ -127,7 +119,7 @@ module.exports.getProfilepage = (req, res) => {
   });
 };
 module.exports.getSettingspage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/admin/settings.html", (err, data) => {
+  fs.readFile(__dirname + "/../vendors/admin/settings.ejs", (err, data) => {
     if (err) {
       res.end(404);
     } else {
@@ -136,7 +128,7 @@ module.exports.getSettingspage = (req, res) => {
   });
 };
 module.exports.getSlidespage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/admin/slides.html", (err, data) => {
+  fs.readFile(__dirname + "/../vendors/admin/slides.ejs", (err, data) => {
     if (err) {
       res.end(404);
     } else {
@@ -145,7 +137,7 @@ module.exports.getSlidespage = (req, res) => {
   });
 };
 module.exports.getUserspage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/admin/userss.html", (err, data) => {
+  fs.readFile(__dirname + "/../vendors/admin/userss.ejs", (err, data) => {
     if (err) {
       res.end(404);
     } else {
