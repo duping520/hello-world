@@ -7,31 +7,14 @@ const fs = require("fs");
 // 读取前台页面
 module.exports.getIndexpage = (req, res) => {
   // 现在这么做得原因是我们还没有引入模板引擎
-  fs.readFile(__dirname + "/../vendors/index.ejs", (err, data) => {
-    if (err) {
-      res.end(404);
-    } else {
-      res.end(data);
-    }
-  });
+  // console.log(res);
+  res.render("index.ejs");
 };
 module.exports.getListpage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/list.ejs", (err, data) => {
-    if (err) {
-      res.end(404);
-    } else {
-      res.end(data);
-    }
-  });
+  res.render("list.ejs");
 };
 module.exports.getDetailpage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/detail.ejs", (err, data) => {
-    if (err) {
-      res.end(404);
-    } else {
-      res.end(data);
-    }
-  });
+  res.render("./views/detail.ejs");
 };
 
 // 读取后台页面
