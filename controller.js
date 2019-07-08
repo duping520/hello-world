@@ -36,112 +36,39 @@ module.exports.getDetailpage = (req, res) => {
 
 // 读取后台页面
 module.exports.getAdminpage = (req, res) => {
-  fs.readFile(__dirname + "/./vendors/admin/index.ejs", (err, data) => {
-    if (err) {
-      return res.end("404");
-    } else {
-      res.end(data);
-      //   console.log(data);
-    }
-  });
+  res.render("admin/index.ejs");
 };
 module.exports.getCategoriespage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/admin/categories.ejs", (err, data) => {
-    if (err) {
-      res.end(404);
-    } else {
-      res.end(data);
-    }
-  });
+  res.render("admin/categories.ejs");
 };
 module.exports.getCommentspage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/admin/comments.ejs", (err, data) => {
-    if (err) {
-      res.end(404);
-    } else {
-      res.end(data);
-    }
-  });
+  res.render("admin/comments.ejs");
 };
 
 module.exports.getLoginpage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/admin/login.ejs", (err, data) => {
-    if (err) {
-      res.end(404);
-    } else {
-      res.end(data);
-    }
-  });
+  res.render("admin/login.ejs");
 };
 module.exports.getNavMenuspage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/admin/anv-menus.ejs", (err, data) => {
-    if (err) {
-      res.end(404);
-    } else {
-      res.end(data);
-    }
-  });
+  res.render("admin/nav-menus.ejs");
 };
 module.exports.getPasswordResetpage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/admin/password.ejs", (err, data) => {
-    if (err) {
-      res.end(404);
-    } else {
-      res.end(data);
-    }
-  });
+  res.render("admin/password-reset.ejs");
 };
 module.exports.getPostAddpage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/admin/posts.ejs", (err, data) => {
-    if (err) {
-      res.end(404);
-    } else {
-      res.end(data);
-    }
-  });
+  res.render("admin/post-add.ejs");
 };
 module.exports.getPostspage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/admin/post-add.ejs", (err, data) => {
-    if (err) {
-      res.end(404);
-    } else {
-      res.end(data);
-    }
-  });
+  res.render("admin/posts.ejs");
 };
 module.exports.getProfilepage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/admin/profile.ejs", (err, data) => {
-    if (err) {
-      res.end(404);
-    } else {
-      res.end(data);
-    }
-  });
+  res.render("admin/profile.ejs");
 };
 module.exports.getSettingspage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/admin/settings.ejs", (err, data) => {
-    if (err) {
-      res.end(404);
-    } else {
-      res.end(data);
-    }
-  });
+  res.render("admin/settings.ejs");
 };
 module.exports.getSlidespage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/admin/slides.ejs", (err, data) => {
-    if (err) {
-      res.end(404);
-    } else {
-      res.end(data);
-    }
-  });
+  res.render("admin/slides.ejs");
 };
 module.exports.getUserspage = (req, res) => {
-  fs.readFile(__dirname + "/../vendors/admin/userss.ejs", (err, data) => {
-    if (err) {
-      res.end(404);
-    } else {
-      res.end(data);
-    }
-  });
+  res.render("admin/users.ejs");
 };

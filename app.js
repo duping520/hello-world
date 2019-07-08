@@ -25,7 +25,7 @@ app.use("/uploads", express.static("uploads"));
 
 // 添加路由
 app.get("/", (req, res) => {
-  fs.readFile(__dirname + "/./vendors/index.ejs", (err, data) => {
+  fs.readFile(__dirname + "/./index.ejs", (err, data) => {
     // console.log(data);
     if (err) return res.end("404");
     res.end(data);
